@@ -1,5 +1,7 @@
 # BeyondChats Assignment - Full Stack Scraper & Automation
 
+**Live Demo:** [https://webscrapper-umber.vercel.app](https://webscrapper-umber.vercel.app)
+
 This project is a resilient, full-stack solution designed to scrape content, manage it via a REST API, and automatically enrich/rewrite articles using LLMs (Cohere) and real-time Google Search data.
 
 ## Architecture
@@ -80,15 +82,21 @@ npm run dev
 ```
 *UI runs on http://localhost:5173*
 
-### 3. Run Automation Agent
-Ensure backend is running.
+### 3. Run Automation Agent (Hybrid Mode)
+For the deployed version, run the agent locally to update your Live Render Database without server costs.
 ```bash
 cd automation-script
 npm install
 # Create .env
 # COHERE_API_KEY=your_key_here
+# BACKEND_URL=https://your-backend.onrender.com/api/articles
 node index.js
 ```
+
+## Deployment Status
+- **Backend**: Deployed on Render (Free Tier)
+- **Frontend**: Deployed on Vercel
+- **Data Pipeline**: Automated via Local Worker (Hybrid Architecture)
 
 ## Feature Checklist
 
