@@ -10,10 +10,9 @@ graph TD
     C[Automation Script] -->|Fetches Pending| B
     C -->|Google News RSS| D[Reference Search]
     C -->|Puppeteer/Axios| E[Scrape External Context]
-    C -->|Context + Prompt| F[LLM (Cohere Command)]
+    C -->|Context + Prompt| F["LLM (Cohere Command)"]
     F -->|Structurally Rewritten Content| B
-    G[React Frontend] -->|Visualizes| B
-```
+    
 
 ## Tech Stack
 
@@ -107,3 +106,4 @@ node index.js
 | GET | `/api/articles/:id` | Get single article details |
 | POST | `/api/scrape` | Trigger internal scraper (Internal Job) |
 | PUT | `/api/articles/:id` | Update article (Automation Agent) |
+
