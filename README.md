@@ -1,6 +1,7 @@
 # BeyondChats Assignment - Full Stack Scraper & Automation
 
-**Live Demo:** [https://webscrapper-umber.vercel.app](https://webscrapper-umber.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://webscrapper-umber.vercel.app)
+[![Backend API](https://img.shields.io/badge/API-Active-blue?style=for-the-badge)](https://webscrapperbackend.onrender.com/api/articles)
 
 This project is a resilient, full-stack solution designed to scrape content, manage it via a REST API, and automatically enrich/rewrite articles using LLMs (Cohere) and real-time Google Search data.
 
@@ -116,3 +117,4 @@ node index.js
 | GET | `/api/articles/:id` | Get single article details |
 | POST | `/api/scrape` | Trigger internal scraper (Internal Job) |
 | PUT | `/api/articles/:id` | Update article (Automation Agent) |
+
