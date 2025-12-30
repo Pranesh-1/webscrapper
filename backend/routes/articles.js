@@ -13,6 +13,22 @@ router.get('/', async (req, res) => {
     }
 });
 
+// POST /api/articles - Create Manual (For Migration/Seeding)
+router.post('/', async (req, res) => {
+    try {
+        const { title, content, link, pubDate } = req.body;
+        // Upsert based on link to prevent duplicates
+        const article = await Article.findOneAndUpdate(
+            { link },
+            { title, content, link, pubDate },
+            { upsert: true, new: true }
+        );
+        res.status(201).json(article);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // GET /api/articles/scrape - Trigger Scrape
 router.post('/scrape', async (req, res) => {
     try {
